@@ -62,10 +62,10 @@ export function SolCard() {
   }
 
   return (
-    <Card className="w-full max-w-lg mx-auto">
+    <Card className="w-full max-w-lg mx-auto my-8">
       <CardHeader className="text-center">
         <div className="flex items-center justify-center space-x-3 mb-4">
-          <div className="h-12 w-12 rounded-full border-2 flex items-center justify-center">
+          <div className="h-12 w-12   flex items-center justify-center">
             <Image src="/logo.svg" width={42} height={42} alt="Logo" />
           </div>
           <CardTitle className="text-3xl font-bold">True-Faucet</CardTitle>

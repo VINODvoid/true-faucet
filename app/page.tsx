@@ -1,6 +1,7 @@
 
 
 import { SolCard } from "@/components/Card"
+
 import { Navbar } from "@/components/Navbar";
 
 
@@ -11,6 +12,7 @@ export default function Home() {
     >
       <Navbar />
       <SolCard/>
+      
     </main>
   );
 }

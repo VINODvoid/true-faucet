@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { AppWalletProvider } from "@/context/wallet-context";
 import "@solana/wallet-adapter-react-ui/styles.css";
 import { Toaster } from "@/components/ui/sonner";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,6 +47,7 @@ export default function RootLayout({
         >
           <AppWalletProvider>
         {children}
+        <Footer/>
         <Toaster />
           </AppWalletProvider>
         </ThemeProvider>
