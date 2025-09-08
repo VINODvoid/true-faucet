@@ -1,42 +1,38 @@
 "use client"
-import { Moon, Star, Sun, Wallet } from "lucide-react"
+import { Moon, Star, Sun } from "lucide-react"
 import { Button } from "./ui/button"
 import { Toggle } from "./ui/toggle"
 import { useState } from "react"
-import Logo from "@/public/logo.svg";
 import Image from "next/image"
-
+import { WalletButton } from "./Wallet-Button"
 
 interface NavbarProps {
   logoText?: string
   logoUrl?: string
-  onConnectWallet?: () => void
   onStarGithub?: () => void
 }
 
 export const Navbar = ({ 
   logoText = "True-Faucet",
   logoUrl = "#",
-  onConnectWallet = () => console.log("Connect wallet clicked"),
   onStarGithub = () => window.open("https://github.com/VINODvoid", "_blank")
 }: NavbarProps) => {
   const [isDarkMode, setIsDarkMode] = useState(false)
 
   const handleThemeToggle = (pressed: boolean) => {
     setIsDarkMode(pressed)
-    // In a real app, you would apply the theme here
     if (pressed) {
-      document.documentElement.classList.add('dark')
+      document.documentElement.classList.add("dark")
     } else {
-      document.documentElement.classList.remove('dark')
+      document.documentElement.classList.remove("dark")
     }
   }
 
   return (
     <nav className="border-b border-border bg-background">
-      <div className=" mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo and Logo Name */}
+          {/* Logo */}
           <div className="flex items-center space-x-3">
             <a href={logoUrl} className="flex items-center space-x-2">
               <div className="w-8 h-8 rounded-lg flex items-center justify-center">
@@ -45,11 +41,13 @@ export const Navbar = ({
               <span className="text-xl font-semibold text-foreground">
                 {logoText}
               </span>
-              <span className="text-muted-foreground text-sm rounded-full border px-2 border-secondary-foreground">v 1.1</span>
+              <span className="text-muted-foreground text-sm rounded-full border px-2 border-secondary-foreground">
+                v 1.1
+              </span>
             </a>
           </div>
 
-          {/* Right side controls */}
+          {/* Right Controls */}
           <div className="flex items-center space-x-4">
             {/* Dark Mode Toggle */}
             <Toggle
@@ -72,18 +70,10 @@ export const Navbar = ({
               />
             </Toggle>
 
-            {/* Connect Wallet Button */}
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={onConnectWallet}
-              className="flex items-center space-x-2"
-            >
-              <Wallet size={16} />
-              <span>Connect Wallet</span>
-            </Button>
+            {/* ✅ Wallet Button */}
+            <WalletButton />
 
-            {/* Star on GitHub Button */}
+            {/* Star on GitHub */}
             <Button
               variant="default"
               size="sm"

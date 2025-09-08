@@ -1,5 +1,6 @@
 
 
+import { SolCard } from "@/components/Card"
 import { Navbar } from "@/components/Navbar";
 
 
@@ -9,7 +10,7 @@ export default function Home() {
      className="max-w-7xl mx-auto flex flex-col gap-4 p-4 min-h-[92vh]"
     >
       <Navbar />
-
+      <SolCard/>
     </main>
   );
 }
